@@ -1,0 +1,17 @@
+from flask import Flask, render_template, request
+app= Flask(__name__)
+expenses=[]
+def add_expense(category,amount):
+    expense={"category":category,"amount":float(amount)}
+    expenses.append(expense)
+@app.route("/")
+def home():
+    return render_template('index.html',expenses=expenses)
+@app.route('/add',methods=['POST'])
+def add():
+    category=request.form['category']
+    amount= request.form['amount']
+    add_expense(category,amount)
+    return render_template('index.html',expenses=expenses)
+if __name__=="__main__":
+    app.run(debug=True)
