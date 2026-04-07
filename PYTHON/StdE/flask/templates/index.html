@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
 </head>
-<body bgcolor="pink">
+<body>
+    <p>GANPATI BAPPA</p>
     <h1  align="middle">Expense Tracker</h1>
     <form align="middle" method="POST" action="/add">
         <input type="text" name="category" placholder="Category" required>
@@ -19,9 +20,9 @@
             <th align="middle">Amount</th>
         </tr>
         {% for i in expenses %}
-        <tr align="middle">
-            <td align="middle">{{i.category}}</td>
-            <td align="middle">{{i.amount}}</td>
+        <tr>
+            <td>{{i.category}}</td>
+            <td>{{i.amount}}</td>
         </tr>
         {% endfor %}
     </table>
