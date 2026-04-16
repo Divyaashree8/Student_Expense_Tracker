@@ -12,24 +12,36 @@
         background-repeat: no-repeat;
         background-position: center;
         height: 100vh;
-        margin:0;
+    }
+    .container{
+        text-align: center;
+        margin-top: 50px;
+    }
+    input,button{
+        padding: 10px;
+        margin: 5px;
+        border-radius: 8px;
+        border: none;
     }
 </style>
 <body>
-    <h1  align="middle">Expense Tracker</h1>
+    <h1 align="middle">Expense Tracker</h1>
     <form align="middle" method="POST" action="/add">
         <input type="text" name="category" placholder="Category" required>
         <input type="number" name="amount" placeholder="Amount" required>
+        <input type="date" name="date" required>
         <button type="submit">Add Expense</button>
     </form>
     <h2 align="middle">All Expense</h2>
-    <table align="middle" border="1">
-        <tr align="middle">
-            <th align="middle"> Category</th>
-            <th align="middle">Amount</th>
+    <table align="center" border="1">
+        <tr>
+            <th>Date</th>
+            <th> Category</th>
+            <th>Amount</th>
         </tr>
         {% for i in expenses %}
         <tr>
+            <td>{{i.date}}</td>
             <td>{{i.category}}</td>
             <td>{{i.amount}}</td>
         </tr>
