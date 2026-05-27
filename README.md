@@ -4,6 +4,9 @@ Features
 . View all expenses
 . Calculate total spending
 Technologies Used
-Python
+.Python
+.Html
+.Css
+.Flask
 Future Improvements
-. Convert to web app using Flask
+.To add more styling
